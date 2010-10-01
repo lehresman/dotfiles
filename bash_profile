@@ -1,0 +1,38 @@
+function find_git_branch {
+    local dir=. head
+    until [ "$dir" -ef / ]; do
+        if [ -f "$dir/.git/HEAD" ]; then
+            head=$(< "$dir/.git/HEAD")
+            if [[ $head == ref:\ refs/heads/* ]]; then
+                git_branch="${head#*/*/} "
+            elif [[ $head != '' ]]; then
+                git_branch='(detached) '
+            else
+                git_branch='(unknown) '
+            fi
+            return
+        fi
+        dir="../$dir"
+    done
+    git_branch=''
+}
+
+export LS_COLORS='no=00:fi=00:di=00;32:ln=00;36:pi=01;36:so=00;34:bd=33;01:cd=33;01:or=31;01:ex=00;33:*.tar=01;37:*.tgz=01;37:*.arj=01;37:*.taz=01;37:*.lzh=01;37:*.zip=01;37:*.z=01;37:*.Z=01;37:*.gz=01;37:*.deb=01;37:*.rpm=01;37:*.bz2=01;37:*.jpg=01;32:*.gif=01;32:*.png=01;32:*.bmp=01;32:*.ppm=01;32:*.tga=01;32:*.xbm=01;32:*.xpm=01;32:*.tif=01;32:*.mpg=01;32:*.avi=01;32:*.gl=01;32:*.dl=01;35:*.cc=01;32:*.cpp=01;32:*.py=01;32:*.java=01;32:*.h=00;32:*.c=01;32:*.o=00;37:*.pyc=00;37'
+
+export LYEL="\001\e[1;33m\002"
+export LGREEN="\001\e[1;32m\002"
+export LRED="\001\e[1;31m\002"
+export LBLUE="\001\e[1;34m\002"
+export DYEL="\001\e[0;33m\002"
+export NORM="\001\e[0m\002"
+PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
+export PS1="${DYEL}{${LBLUE}\$git_branch${LYEL}\u@\h${DYEL}:\w}\$${NORM} ";
+
+export PATH=$HOME/bin:$PATH
+export FIGNORE=".svn"
+
+unset LANG
+export LC_ALL=POSIX
+
+alias ls="ls --color -F"
+

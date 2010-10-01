@@ -1,0 +1,21 @@
+[user]
+	name = Luke Ehresman
+	email = luke@ehresman.org
+	editor = vim
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	br = branch
+	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen%an, %ar%Creset%n %s%n'
+	cp = cherry-pick
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	template = auto
+[github]
+	user = lehresman
