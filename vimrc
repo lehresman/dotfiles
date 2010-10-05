@@ -30,14 +30,15 @@ set laststatus=2
 """
 syntax on
 hi clear
-hi Comment    ctermfg=Green
-hi SpecialComment ctermfg=Green
+hi Comment    ctermfg=DarkYellow
+hi SpecialComment ctermfg=Yellow
+hi String     ctermfg=DarkGreen
 hi Constant   ctermfg=DarkGreen
 hi Special    ctermfg=DarkCyan
 hi Identifier ctermfg=Gray
 hi Statement  ctermfg=White
 hi PreProc    ctermfg=Gray
-hi Type       ctermfg=White
+hi Type       ctermfg=Gray
 hi Ignore     ctermfg=White
 hi ErrorMsg   cterm=bold ctermfg=White    ctermbg=None
 hi Error      cterm=bold ctermfg=White    ctermbg=None
