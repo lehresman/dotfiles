@@ -9,6 +9,15 @@ confirm () {
 	SRCNAME="`pwd`/$1"
 	FNAME="$HOME/.$1"
 
+	if [ -d "/proc" ]; then
+		OS="linux"
+	else
+		OS="mac"
+	fi
+	if [ -e "$SRCNAME.$OS" ]; then
+		SRCNAME="$SRCNAME.$OS"
+	fi
+
 	echo "LINKING: $SRCNAME -> $FNAME"
 	if [ -e $FNAME ]; then
 		echo -n "  File $FNAME already exists.  Overwrite? [yN] "
