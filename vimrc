@@ -19,7 +19,7 @@ set nocindent
 set restorescreen
 set shiftwidth=4
 set list
-set listchars=tab:+-,trail:-,extends:>,precedes:<
+set listchars=tab:+·,trail:·,extends:>,precedes:<
 set scrolljump=1
 set showcmd
 set sidescrolloff=3
