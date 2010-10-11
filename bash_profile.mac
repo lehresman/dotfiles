@@ -31,9 +31,17 @@ export LGREEN="\001\e[1;32m\002"
 export LRED="\001\e[1;31m\002"
 export LBLUE="\001\e[1;34m\002"
 export DYEL="\001\e[0;33m\002"
+export DGREEN="\001\e[0;32m\002"
+export DRED="\001\e[0;31m\002"
+export DBLUE="\001\e[0;34m\002"
 export NORM="\001\e[0m\002"
+
 PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
-export PS1="${NORM}{${LBLUE}\$git_branch${NORM}\u@\h:\w}\$ "
+if [ "$USER" != "lehresman" ] && [ "$USER" != "lehresma" ]; then
+	export PS1="${DRED}{${LBLUE}\$git_branch${LRED}\u@\h${DRED}:\w}\$${NORM} ";
+else
+	export PS1="${DYEL}{${LBLUE}\$git_branch${LYEL}\u@\h${DYEL}:\w}\$${NORM} ";
+fi
 
 alias ls="ls -GF"
 
