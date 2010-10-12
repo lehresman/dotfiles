@@ -25,7 +25,8 @@ confirm () {
 }
 
 remove () {
-	if [ -e "$HOME/.$1" ]; then
+	if [ -h "$HOME/.$1" ]; then
+		echo "REMOVING: $HOME/.$1"
 		rm "$HOME/.$1"
 	fi
 }
