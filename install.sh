@@ -14,24 +14,27 @@ confirm () {
 	else
 		OS="mac"
 	fi
+
 	if [ -e "$SRCNAME.$OS" ]; then
 		SRCNAME="$SRCNAME.$OS"
 	fi
 
 	echo "LINKING: $SRCNAME -> $FNAME"
-	if [ -e $FNAME ]; then
-		echo -n "  File $FNAME already exists.  Overwrite? [yN] "
-		read overwrite
-		if [ "$overwrite" = "y" ]; then
-			install $SRCNAME $FNAME
-		fi
-	else
-		install $SRCNAME $FNAME
+	remove $FNAME
+	install $SRCNAME $FNAME
+}
+
+remove () {
+	if [ -e "$HOME/.$1" ]; then
+		rm "$HOME/.$1"
 	fi
 }
 
+# remove some legacy stuff if it exists
+remove "vim"
+
+# create symlinks to the dotfiles directory
 confirm "bash_profile"
 confirm "gitconfig"
 confirm "vimrc"
-confirm "vim"
 confirm "gemrc"
