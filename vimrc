@@ -57,5 +57,6 @@ hi IncSearch  ctermfg=Gray       ctermbg=Black
 
 au BufNewFile,BufRead *.php,*.php3,*.inc  set ft=php
 au BufNewFile,BufRead *.txt set et ts=4 tw=80
-au BufNewFile,BufRead *.rb,*.yml,*.haml,*.sass,*.erb set et ts=2 sw=2 sts=2
-au BufNewFile,BufRead Capfile,capfile set et ts=2 sw=2 sts=2 ft=ruby
+au BufNewFile,BufRead *.rb,*.yml,*.haml,*.erb set et ts=2 sw=2 sts=2
+au BufNewFile,BufRead Rakefile,Capfile,capfile set et ts=2 sw=2 sts=2 ft=ruby
+au BufNewFile,BufRead *.scss ft=sass

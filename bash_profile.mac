@@ -52,3 +52,4 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+. "$HOME/.bash_custom"
