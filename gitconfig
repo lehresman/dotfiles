@@ -4,6 +4,8 @@
 	editor = vim
 [core]
 	editor = vim
+[push]
+	default = current
 [alias]
 	co = checkout
 	st = status
