@@ -29,6 +29,9 @@ function find_git_branch {
     done
     git_branch=''
 }
+function munge_path {
+    munged_path=`ruby -e "p='$PWD'.sub('$HOME','~').split('/');print '.../' if p.length > 4; print p[[0,p.length-4].max,p.length].join('/');print '/' if p.length==0"`
+}
 export LYEL="\001\e[1;33m\002"
 export LGREEN="\001\e[1;32m\002"
 export LRED="\001\e[1;31m\002"
@@ -39,11 +42,11 @@ export DRED="\001\e[0;31m\002"
 export DBLUE="\001\e[0;34m\002"
 export NORM="\001\e[0m\002"
 
-PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
+PROMPT_COMMAND="munge_path; find_git_branch; $PROMPT_COMMAND"
 if [ "$USER" != "lehresman" ] && [ "$USER" != "lehresma" ]; then
-	export PS1="${DRED}{${LBLUE}\$git_branch${LRED}\u@\h${DRED}:\w}\$${NORM} ";
+	export PS1="${DRED}{${LBLUE}\$git_branch${LRED}\u@\h${DRED}:\$munged_path}\$${NORM} ";
 else
-	export PS1="${NORM}{${LBLUE}\$git_branch${NORM}\u@\h${NORM}:\w}\$ ";
+	export PS1="${NORM}{${LBLUE}\$git_branch${NORM}\u@\h${NORM}:\$munged_path}\$ ";
 fi
 
 alias ls="ls -GF"
