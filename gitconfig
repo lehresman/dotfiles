@@ -4,6 +4,7 @@
 	editor = vim
 [core]
 	editor = vim
+	quotepath = false
 [push]
 	default = current
 [alias]
