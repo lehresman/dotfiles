@@ -19,7 +19,8 @@ set nocindent
 set restorescreen
 set shiftwidth=4
 set list
-set listchars=tab:+-,trail:-,extends:>,precedes:<
+"set listchars=tab:+-,trail:-,extends:>,precedes:<
+set listchars=tab:+-,extends:>,precedes:<
 set scrolljump=1
 set showcmd
 set sidescrolloff=3
@@ -35,10 +36,10 @@ hi SpecialComment ctermfg=Yellow
 hi String     ctermfg=DarkGreen
 hi Constant   ctermfg=DarkGreen
 hi Special    ctermfg=DarkCyan
-hi Identifier ctermfg=Gray
-hi Statement  ctermfg=White
+hi Identifier ctermfg=DarkGray
+hi Statement  ctermfg=DarkCyan
 hi PreProc    ctermfg=Gray
-hi Type       ctermfg=Gray
+hi Type       ctermfg=DarkGray
 hi Ignore     ctermfg=White
 hi ErrorMsg   cterm=bold ctermfg=White    ctermbg=None
 hi Error      cterm=bold ctermfg=White    ctermbg=None
@@ -57,6 +58,7 @@ hi IncSearch  ctermfg=Gray       ctermbg=Black
 
 au BufNewFile,BufRead *.php,*.php3,*.inc  set ft=php
 au BufNewFile,BufRead *.txt set et ts=4 tw=80
-au BufNewFile,BufRead *.js,*.html,*.htm,*.scss,*.sass,*.rb,*.yml,*.haml,*.erb,*.rake,*.markdown set et ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.js,*.html,*.htm,*.less,*.scss,*.sass,*.rb,*.yml,*.haml,*.erb,*.rake,*.markdown set et ts=2 sw=2 sts=2
 au BufNewFile,BufRead Rakefile,Capfile,capfile set et ts=2 sw=2 sts=2 ft=ruby
 au BufNewFile,BufRead *.scss set ft=sass
+au BufNewFile,BufRead *.less set ft=css
