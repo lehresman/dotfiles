@@ -22,22 +22,17 @@ function munge_path {
 
 export LS_COLORS='no=00:fi=00:di=00;32:ln=00;36:pi=01;36:so=00;34:bd=33;01:cd=33;01:or=31;01:ex=00;33:*.tar=01;37:*.tgz=01;37:*.arj=01;37:*.taz=01;37:*.lzh=01;37:*.zip=01;37:*.z=01;37:*.Z=01;37:*.gz=01;37:*.deb=01;37:*.rpm=01;37:*.bz2=01;37:*.jpg=01;32:*.gif=01;32:*.png=01;32:*.bmp=01;32:*.ppm=01;32:*.tga=01;32:*.xbm=01;32:*.xpm=01;32:*.tif=01;32:*.mpg=01;32:*.avi=01;32:*.gl=01;32:*.dl=01;35:*.cc=01;32:*.cpp=01;32:*.py=01;32:*.java=01;32:*.h=00;32:*.c=01;32:*.o=00;37:*.pyc=00;37'
 
-export LYEL="\001\e[1;33m\002"
-export LGREEN="\001\e[1;32m\002"
-export LRED="\001\e[1;31m\002"
-export LBLUE="\001\e[1;34m\002"
-export DYEL="\001\e[0;33m\002"
-export DGREEN="\001\e[0;32m\002"
-export DRED="\001\e[0;31m\002"
-export DBLUE="\001\e[0;34m\002"
-export NORM="\001\e[0m\002"
-
-PROMPT_COMMAND="munge_path; find_git_branch; $PROMPT_COMMAND"
+# colors found at http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+RS="\033[0m"    # reset
+BOLD="\033[38;5;220m"
+TOP="\033[38;5;235m"
 if [ "$USER" != "lehresman" ] && [ "$USER" != "lehresma" ]; then
-	export PS1="${DRED}{${LBLUE}\$git_branch${LRED}\u@\h${DRED}:\$munged_path}\$${NORM} ";
+	FG="\033[0;31m"
 else
-	export PS1="${DYEL}{${LBLUE}\$git_branch${LYEL}\u@\h${DYEL}:\$munged_path}\$${NORM} ";
+	FG="$RS"
 fi
+PS1="${RS}${TOP}[`date \"+%Y-%m-%d %r\"`  \w]${RS}\n${FG}[${BOLD}\$git_branch${FG}\u@\h]\$${RS} "
+PROMPT_COMMAND="munge_path; find_git_branch; $PROMPT_COMMAND"
 
 export PATH=$HOME/bin:$PATH
 export FIGNORE=".svn"

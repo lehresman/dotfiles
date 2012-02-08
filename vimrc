@@ -38,12 +38,12 @@ hi Constant   ctermfg=DarkGreen
 hi Special    ctermfg=DarkCyan
 hi Identifier ctermfg=DarkGray
 hi Statement  ctermfg=DarkCyan
-hi PreProc    ctermfg=Gray
+hi PreProc    ctermfg=White
 hi Type       ctermfg=DarkGray
 hi Ignore     ctermfg=White
-hi ErrorMsg   cterm=bold ctermfg=White    ctermbg=None
-hi Error      cterm=bold ctermfg=White    ctermbg=None
-hi LineNr     ctermfg=DarkGreen   ctermbg=None
+hi ErrorMsg   ctermfg=DarkRed ctermbg=None
+hi Error      ctermfg=DarkRed ctermbg=None
+hi LineNr     ctermfg=DarkGreen ctermbg=None
 hi StatusLine cterm=bold ctermfg=White ctermbg=Blue
 hi ModeMsg    ctermfg=Blue
 hi Tooltip    ctermfg=Green
