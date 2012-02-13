@@ -8,6 +8,7 @@
 #export PATH=$PATH:/Users/Luke/Scripts:/usr/local/bin:$EC2_HOME/bin
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #export PATH=$PATH:$HOME/.gem/ruby/1.8/bin
+export PATH=$PATH:$HOME/bin
 export LSCOLORS="cxgxcbdbdxegeddxdxcxcx"
 export EDITOR="/usr/bin/vim"
 
@@ -34,15 +35,14 @@ function munge_path {
 }
 
 # colors found at http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-RS="\033[0m"    # reset
-BOLD="\033[38;5;220m"
-TOP="\033[38;5;235m"
+RS="\[\033[0m\]"    # reset
+BOLD="\[\033[38;5;220m\]"
 if [ "$USER" != "lehresman" ] && [ "$USER" != "lehresma" ]; then
-	FG="\033[0;31m"
+	FG="\[\033[0;31m\]"
 else
-	FG="$RS"
+	FG="\[\033[38;5;235m\]"
 fi
-PS1="${RS}${TOP}[`date \"+%Y-%m-%d %r\"`  \w]${RS}\n${FG}[${BOLD}\$git_branch${FG}\u@\h]\$${RS} "
+PS1="${FG}[${BOLD}\$git_branch${FG}\u@\h \$munged_path]\$${RS} "
 PROMPT_COMMAND="munge_path; find_git_branch; $PROMPT_COMMAND"
 
 alias ls="ls -GF"
