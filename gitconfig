@@ -12,7 +12,7 @@
 	st = status
 	ci = commit
 	br = branch
-	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen%an, %ar%Creset%n %s%n'
+	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen%an, %ar%Creset - %s'
 	cp = cherry-pick
 [color]
 	branch = auto
