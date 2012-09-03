@@ -52,3 +52,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export REVEAL_HOME=$HOME/Code/cuegg/reveal
 
 [[ -s "$HOME/.bash_custom" ]] && source "$HOME/.bash_custom"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
