@@ -31,12 +31,11 @@ remove () {
 	fi
 }
 
-# remove some legacy stuff if it exists
-remove "vim"
-
 # create symlinks to the dotfiles directory
 confirm "bash_profile"
 confirm "gitconfig"
+confirm "vim"
 confirm "vimrc"
+confirm "gvimrc"
 confirm "gemrc"
 confirm "sqliterc"

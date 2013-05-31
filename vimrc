@@ -1,5 +1,6 @@
 let loaded_matchparen = 1
 
+set clipboard=unnamed
 set nocompatible
 set ignorecase
 set smartcase
@@ -19,42 +20,15 @@ set nocindent
 set restorescreen
 set shiftwidth=4
 set list
-"set listchars=tab:+-,trail:-,extends:>,precedes:<
-set listchars=tab:+-,extends:>,precedes:<
+set listchars=tab:+·,extends:>,precedes:<
 set scrolljump=1
 set showcmd
 set sidescrolloff=3
 set laststatus=2
+set noautochdir
 
-"""
-"""  Luke's custom syntax hilighting color scheme
-"""
 syntax on
-hi clear
-hi Comment    ctermfg=DarkYellow
-hi SpecialComment ctermfg=Yellow
-hi String     ctermfg=DarkGreen
-hi Constant   ctermfg=DarkGreen
-hi Special    ctermfg=DarkCyan
-hi Identifier ctermfg=DarkGray
-hi Statement  ctermfg=DarkCyan
-hi PreProc    ctermfg=White
-hi Type       ctermfg=DarkGray
-hi Ignore     ctermfg=White
-hi ErrorMsg   ctermfg=DarkRed ctermbg=None
-hi Error      ctermfg=DarkRed ctermbg=None
-hi LineNr     ctermfg=DarkGreen ctermbg=None
-hi StatusLine cterm=bold ctermfg=White ctermbg=Blue
-hi ModeMsg    ctermfg=Blue
-hi Tooltip    ctermfg=Green
-hi SpecialKey ctermfg=DarkRed
-hi NonText    ctermfg=DarkRed
-hi Include    ctermfg=DarkCyan
-hi Define     ctermfg=DarkCyan
-hi Macro      ctermfg=DarkCyan
-hi PreCondit  ctermfg=Cyan
-hi Search     ctermfg=Gray       ctermbg=Black
-hi IncSearch  ctermfg=Gray       ctermbg=Black
+colorscheme luke
 
 au BufNewFile,BufRead *.php,*.php3,*.inc  set ft=php
 au BufNewFile,BufRead *.txt set et ts=4 tw=80
@@ -63,3 +37,10 @@ au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead Gemfile,Rakefile,Capfile,capfile,*.pdf.prawn,*.rabl set et ts=2 sw=2 sts=2 ft=ruby
 au BufNewFile,BufRead *.scss set ft=sass
 au BufNewFile,BufRead *.less set ft=css
+
+command Gocd execute 'cd ~/code/donor_keep'
+command Gocrr execute 'cd ~/code/cuegg/reveal/rails'
+
+filetype plugin on
+map vl <Leader>cl<space>
+map vu <Leader>cu<space>

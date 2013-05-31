@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/lehresman/.rvm'
+let g:netrw_dirhist_2='/Users/lehresman/Data/log'
+let g:netrw_dirhist_3='/Users/lehresman/.cups'
+let g:netrw_dirhist_4='/Users/lehresman/Code/cuegg/reveal/rails/config/initializers'
+let g:netrw_dirhist_5='/Users/lehresman/Code/cuegg/reveal/rails/config'
+let g:netrw_dirhist_6='/Users/lehresman/Code/cuegg/reveal/rails'
