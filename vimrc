@@ -29,6 +29,7 @@ set noautochdir
 
 syntax on
 colorscheme luke
+syntax sync minlines=1000
 
 au BufNewFile,BufRead *.php,*.php3,*.inc  set ft=php
 au BufNewFile,BufRead *.txt set et ts=4 tw=80
