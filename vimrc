@@ -20,12 +20,14 @@ set nocindent
 set restorescreen
 set shiftwidth=4
 set list
-set listchars=tab:+-,extends:>,precedes:<
+set listchars=tab:+·,extends:>,precedes:<,trail:·
 set scrolljump=1
 set showcmd
 set sidescrolloff=3
 set laststatus=2
 set noautochdir
+set ttimeoutlen=250
+set mouse=a
 
 syntax on
 colorscheme luke
@@ -39,9 +41,28 @@ au BufNewFile,BufRead Gemfile,Rakefile,Capfile,capfile,*.pdf.prawn,*.rabl set et
 au BufNewFile,BufRead *.scss set ft=sass
 au BufNewFile,BufRead *.less set ft=css
 
-command Gocd execute 'cd ~/code/donor_keep'
-command Gocrr execute 'cd ~/code/cuegg/reveal/rails'
+" Change status line color when in insert mode.
+set laststatus=2
+if version >= 700
+  au InsertEnter * hi StatusLine ctermfg=White ctermbg=202 cterm=none
+  au InsertLeave * hi StatusLine ctermfg=White ctermbg=240 cterm=none
+endif
 
-filetype plugin on
-map vl <Leader>cl<space>
-map vu <Leader>cu<space>
+" Vundle Configuration
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle "honza/vim-snippets"
+
+" CtrlP Configuration
+filetype plugin indent on     " required!
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_prompt_mappings = {
+\ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+\ 'AcceptSelection("e")': ['<c-t>'],
+\ }

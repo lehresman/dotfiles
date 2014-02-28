@@ -33,28 +33,41 @@ if has("gui_running")
 	hi IncSearch      guifg=#cc0000 gui=none
 	hi Visual         guibg=#333333
 else
-	hi Comment        ctermfg=DarkYellow
-	hi SpecialComment ctermfg=Yellow
-	hi String         ctermfg=DarkGreen
-	hi Constant       ctermfg=DarkGreen
-	hi Special        ctermfg=DarkCyan
-	hi Identifier     ctermfg=DarkGray
-	hi Statement      ctermfg=DarkCyan
-	hi PreProc        ctermfg=White
-	hi Type           ctermfg=DarkGray
-	hi Ignore         ctermfg=White
-	hi ErrorMsg       ctermfg=DarkRed
-	hi Error          ctermfg=DarkRed
-	hi LineNr         ctermfg=DarkGreen
-	hi StatusLine     ctermfg=White ctermbg=Blue
-	hi ModeMsg        ctermfg=Blue
-	hi Tooltip        ctermfg=Green
-	hi SpecialKey     ctermfg=DarkRed
-	hi NonText        ctermfg=DarkRed
-	hi Include        ctermfg=DarkCyan
-	hi Define         ctermfg=DarkCyan
-	hi Macro          ctermfg=DarkCyan
-	hi PreCondit      ctermfg=Cyan
-	hi Search         ctermfg=Gray
-	hi IncSearch      ctermfg=Gray
+	set t_Co=256
+	" http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
+	hi Normal         ctermfg=White ctermbg=None cterm=None
+	hi Cursor         ctermfg=White ctermbg=None cterm=None
+	hi Comment        ctermfg=DarkYellow ctermbg=None cterm=None
+	hi SpecialComment ctermfg=Yellow ctermbg=None cterm=None
+	hi String         ctermfg=DarkGreen ctermbg=None cterm=None
+	hi Constant       ctermfg=DarkGreen ctermbg=None cterm=None
+	hi Special        ctermfg=DarkCyan ctermbg=None cterm=None
+	hi Identifier     ctermfg=DarkGray ctermbg=None cterm=None
+	hi Statement      ctermfg=DarkCyan ctermbg=None cterm=None
+	hi PreProc        ctermfg=White ctermbg=None cterm=None
+	hi Type           ctermfg=DarkGray ctermbg=None cterm=None
+	hi Ignore         ctermfg=White ctermbg=None cterm=None
+	hi ErrorMsg       ctermfg=DarkRed ctermbg=None cterm=None
+	hi Error          ctermfg=DarkRed ctermbg=None cterm=None
+	hi LineNr         ctermfg=DarkGreen ctermbg=None cterm=None
+	hi StatusLine     ctermfg=White ctermbg=242 cterm=None
+	hi StatusLineNC   ctermfg=White ctermbg=236 cterm=None
+	hi VertSplit      ctermfg=White ctermbg=236 cterm=None
+	hi Visual         ctermbg=DarkGray
+	hi ModeMsg        ctermfg=Blue ctermbg=None cterm=None
+	hi Tooltip        ctermfg=Green ctermbg=None cterm=None
+	hi SpecialKey     ctermfg=052 ctermbg=None cterm=None
+	hi NonText        ctermfg=DarkRed ctermbg=None cterm=None
+	hi Include        ctermfg=DarkCyan ctermbg=None cterm=None
+	hi Define         ctermfg=DarkCyan ctermbg=None cterm=None
+	hi Macro          ctermfg=DarkCyan ctermbg=None cterm=None
+	hi PreCondit      ctermfg=Cyan ctermbg=None cterm=None
+	hi Search         ctermfg=Yellow ctermbg=238 cterm=None
+	hi IncSearch      ctermfg=Yellow ctermbg=238 cterm=None
+	"hi TabLine        ctermfg=247 ctermbg=17 cterm=None
+	"hi TabLineFill    ctermfg=247 ctermbg=17 cterm=None
+	"hi TabLineSel     ctermfg=15 ctermbg=21 cterm=Bold
+	hi TabLine        ctermfg=250 ctermbg=236 cterm=None
+	hi TabLineFill    ctermfg=250 ctermbg=236 cterm=None
+	hi TabLineSel     ctermfg=White ctermbg=242 cterm=Bold
 endif

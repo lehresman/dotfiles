@@ -34,6 +34,7 @@ function munge_path {
     munged_path=`ruby -e "y='$PWD'.sub('$HOME','~');x='';p=y.split('/');x+='.../' if p.length > 4; x+=p[[0,p.length-4].max,p.length].join('/');x+='/' if p.length==0;if x.length < y.length then print x; else print y; end;"`
 }
 
+
 # colors found at http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 RS="\[\033[0m\]"    # reset
 BOLD="\[\033[38;5;220m\]"
