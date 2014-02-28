@@ -39,9 +39,9 @@ function munge_path {
 RS="\[\033[0m\]"    # reset
 BOLD="\[\033[38;5;220m\]"
 if [ "$USER" != "lehresman" ] && [ "$USER" != "lehresma" ]; then
-	FG="\[\033[0;31m\]"
+	FG="\[\033[38;5;160m\]"
 else
-	FG="\[\033[38;5;235m\]"
+	FG="\[\033[38;5;238m\]"
 fi
 PS1="${FG}[${BOLD}\$git_branch${FG}\u@\h \$munged_path]\$${RS} "
 PROMPT_COMMAND="munge_path; find_git_branch; $PROMPT_COMMAND"

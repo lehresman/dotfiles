@@ -50,7 +50,7 @@ else
 	hi ErrorMsg       ctermfg=DarkRed ctermbg=None cterm=None
 	hi Error          ctermfg=DarkRed ctermbg=None cterm=None
 	hi LineNr         ctermfg=DarkGreen ctermbg=None cterm=None
-	hi StatusLine     ctermfg=White ctermbg=242 cterm=None
+	hi StatusLine     ctermfg=White ctermbg=024 cterm=None
 	hi StatusLineNC   ctermfg=White ctermbg=236 cterm=None
 	hi VertSplit      ctermfg=White ctermbg=236 cterm=None
 	hi Visual         ctermbg=DarkGray
