@@ -26,9 +26,9 @@ export LS_COLORS='no=00:fi=00:di=00;32:ln=00;36:pi=01;36:so=00;34:bd=33;01:cd=33
 RS="\[\033[0m\]"    # reset
 BOLD="\[\033[38;5;220m\]"
 if [ "$USER" != "lehresman" ] && [ "$USER" != "lehresma" ]; then
-	FG="\[\033[0;31m\]"
+	FG="\[\033[38;5;160m\]"
 else
-	FG="\[\033[38;5;235m\]"
+	FG="\[\033[38;5;238m\]"
 fi
 PS1="${FG}[${BOLD}\$git_branch${FG}\u@\h \$munged_path]\$${RS} "
 PROMPT_COMMAND="munge_path; find_git_branch; $PROMPT_COMMAND"

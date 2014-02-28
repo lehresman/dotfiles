@@ -20,14 +20,13 @@ set nocindent
 set restorescreen
 set shiftwidth=4
 set list
-set listchars=tab:+·,extends:>,precedes:<,trail:·
+set listchars=tab:+-,extends:>,precedes:<,trail:-
 set scrolljump=1
 set showcmd
 set sidescrolloff=3
 set laststatus=2
 set noautochdir
 set ttimeoutlen=250
-set mouse=a
 
 syntax on
 colorscheme luke
@@ -40,6 +39,10 @@ au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead Gemfile,Rakefile,Capfile,capfile,*.pdf.prawn,*.rabl set et ts=2 sw=2 sts=2 ft=ruby
 au BufNewFile,BufRead *.scss set ft=sass
 au BufNewFile,BufRead *.less set ft=css
+
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-k> <Esc>lDa
 
 " Change status line color when in insert mode.
 set laststatus=2
