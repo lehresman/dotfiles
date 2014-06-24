@@ -35,6 +35,7 @@ syntax sync minlines=1000
 au BufNewFile,BufRead *.php,*.php3,*.inc  set ft=php
 au BufNewFile,BufRead *.txt set et ts=4 tw=80
 au BufNewFile,BufRead *.js,*.html,*.htm,*.less,*.scss,*.sass,*.rb,*.yml,*.haml,*.erb,*.ejs,*.rake,*.markdown set et ts=2 sw=2 sts=2
+"au BufNewFile,BufRead *.ejs,*.erb set ft=html
 au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead Gemfile,Rakefile,Capfile,capfile,*.pdf.prawn,*.rabl set et ts=2 sw=2 sts=2 ft=ruby
 au BufNewFile,BufRead *.scss set ft=sass
@@ -44,28 +45,41 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-k> <Esc>lDa
 
-" Change status line color when in insert mode.
-set laststatus=2
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=White ctermbg=202 cterm=none
-  au InsertLeave * hi StatusLine ctermfg=White ctermbg=240 cterm=none
-endif
+" Block commenting with ',,' and uncommenting with ',.'
+autocmd FileType c,cpp,java,scala,javascript let b:comment_leader = '// '
+autocmd FileType sh,ruby,python,perl,conf,fstab let b:comment_leader = '# '
+autocmd FileType vim let b:comment_leader = '" '
+noremap <silent> ,, :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,. :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
-" Vundle Configuration
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle "honza/vim-snippets"
+" Vundle Setup
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" --> Have Vundle manage itself
+Plugin 'gmarik/Vundle.vim'
+" --> These are all for snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+" --> The CtrlP plugin
+Plugin 'kien/ctrlp.vim'
+" --> For block comments
+Plugin 'tomtom/tcomment_vim'
+call vundle#end()
+filetype plugin indent on
 
-" CtrlP Configuration
-filetype plugin indent on     " required!
+" CTRL-P Configuration
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_prompt_mappings = {
-\ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-\ 'AcceptSelection("e")': ['<c-t>'],
-\ }
+let g:ctrlp_status_func = {
+  \ 'main': 'CtrlP_Statusline_1',
+  \ 'prog': 'CtrlP_Statusline_2',
+  \ }
+fu! CtrlP_Statusline_1(...)
+	return '%#CtrlPMode2# '.getcwd().' %*'
+endf
+fu! CtrlP_Statusline_2(...)
+	return '%#CtrlPMode2# '.a:1.' %*'
+endf

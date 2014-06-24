@@ -50,11 +50,11 @@ else
 	hi ErrorMsg       ctermfg=DarkRed ctermbg=None cterm=None
 	hi Error          ctermfg=DarkRed ctermbg=None cterm=None
 	hi LineNr         ctermfg=DarkGreen ctermbg=None cterm=None
-	hi StatusLine     ctermfg=White ctermbg=024 cterm=None
+	hi StatusLine     ctermfg=White ctermbg=235 cterm=None
 	hi StatusLineNC   ctermfg=White ctermbg=236 cterm=None
 	hi VertSplit      ctermfg=White ctermbg=236 cterm=None
 	hi Visual         ctermbg=DarkGray
-	hi ModeMsg        ctermfg=Blue ctermbg=None cterm=None
+	hi ModeMsg        ctermfg=DarkYellow ctermbg=None cterm=None
 	hi Tooltip        ctermfg=Green ctermbg=None cterm=None
 	hi SpecialKey     ctermfg=052 ctermbg=None cterm=None
 	hi NonText        ctermfg=DarkRed ctermbg=None cterm=None
@@ -70,4 +70,25 @@ else
 	hi TabLine        ctermfg=250 ctermbg=236 cterm=None
 	hi TabLineFill    ctermfg=250 ctermbg=236 cterm=None
 	hi TabLineSel     ctermfg=White ctermbg=242 cterm=Bold
+	hi CursorLine     ctermbg=166 cterm=None
+
+	hi CtrlPMode1     ctermfg=White ctermbg=235
+	hi CtrlPMode2     ctermfg=White ctermbg=235
+	hi CtrlPStats     ctermfg=White ctermbg=235
+	hi CtrlPNoEntries ctermfg=DarkRed
+	hi CtrlPMatch     ctermfg=White ctermbg=166 cterm=Bold
+	hi CtrlPLinePre   ctermfg=DarkGray
+	hi CtrlPPrtBase   ctermfg=DarkGray
+	hi CtrlPPrtText   ctermfg=DarkYellow
+	hi CtrlPPrtCursor ctermfg=DarkYellow
+	hi CtrlPTabExtra  ctermfg=Yellow
+	hi CtrlPBufName   ctermfg=Yellow
+	hi CtrlPTagKind   ctermfg=Yellow
+	hi CtrlPqfLineCol ctermfg=White
+	hi CtrlPUndoT     ctermfg=White
+	hi CtrlPUndoBr    ctermfg=White
+	hi CtrlPUndoNr    ctermfg=White
+	hi CtrlPUndoSv    ctermfg=White
+	hi CtrlPUndoPo    ctermfg=White
+	hi CtrlPBookmark  ctermfg=Yellow
 endif
