@@ -35,9 +35,8 @@ syntax sync minlines=1000
 au BufNewFile,BufRead *.php,*.php3,*.inc  set ft=php
 au BufNewFile,BufRead *.txt set et ts=4 tw=80
 au BufNewFile,BufRead *.js,*.html,*.htm,*.less,*.scss,*.sass,*.rb,*.yml,*.haml,*.erb,*.ejs,*.rake,*.markdown set et ts=2 sw=2 sts=2
-"au BufNewFile,BufRead *.ejs,*.erb set ft=html
-au BufNewFile,BufRead *.ejs set ft=html
-au BufNewFile,BufRead Gemfile,Rakefile,Capfile,capfile,*.pdf.prawn,*.rabl set et ts=2 sw=2 sts=2 ft=ruby
+au BufNewFile,BufRead *.jst.ejs.erb set ft=html
+au BufNewFile,BufRead Gemfile,Rakefile,Capfile,capfile,*.pdf.prawn,*.rabl,*.ruby set et ts=2 sw=2 sts=2 ft=ruby
 au BufNewFile,BufRead *.scss set ft=sass
 au BufNewFile,BufRead *.less set ft=css
 
@@ -67,16 +66,26 @@ Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 " --> For block comments
 Plugin 'tomtom/tcomment_vim'
+" --> For Rails support
+Plugin 'tpope/vim-rails'
+" --> For JavaScript support
+Plugin 'pangloss/vim-javascript'
+" --> For jst/ejs support
+Plugin 'briancollins/vim-jst'
 call vundle#end()
 filetype plugin indent on
 
 " CTRL-P Configuration
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_prompt_mappings = {
+	\ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+	\ 'AcceptSelection("e")': ['<c-t>'],
+	\ }
 let g:ctrlp_status_func = {
-  \ 'main': 'CtrlP_Statusline_1',
-  \ 'prog': 'CtrlP_Statusline_2',
-  \ }
+	\ 'main': 'CtrlP_Statusline_1',
+	\ 'prog': 'CtrlP_Statusline_2',
+	\ }
 fu! CtrlP_Statusline_1(...)
 	return '%#CtrlPMode2# '.getcwd().' %*'
 endf

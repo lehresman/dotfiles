@@ -50,7 +50,7 @@ else
 	hi ErrorMsg       ctermfg=DarkRed ctermbg=None cterm=None
 	hi Error          ctermfg=DarkRed ctermbg=None cterm=None
 	hi LineNr         ctermfg=DarkGreen ctermbg=None cterm=None
-	hi StatusLine     ctermfg=White ctermbg=235 cterm=None
+	hi StatusLine     ctermfg=White ctermbg=166 cterm=None
 	hi StatusLineNC   ctermfg=White ctermbg=236 cterm=None
 	hi VertSplit      ctermfg=White ctermbg=236 cterm=None
 	hi Visual         ctermbg=DarkGray
@@ -67,16 +67,16 @@ else
 	"hi TabLine        ctermfg=247 ctermbg=17 cterm=None
 	"hi TabLineFill    ctermfg=247 ctermbg=17 cterm=None
 	"hi TabLineSel     ctermfg=15 ctermbg=21 cterm=Bold
-	hi TabLine        ctermfg=250 ctermbg=236 cterm=None
-	hi TabLineFill    ctermfg=250 ctermbg=236 cterm=None
-	hi TabLineSel     ctermfg=White ctermbg=242 cterm=Bold
-	hi CursorLine     ctermbg=166 cterm=None
+	hi TabLine        ctermfg=White ctermbg=235 cterm=None
+	hi TabLineFill    ctermfg=White ctermbg=235 cterm=None
+	hi TabLineSel     ctermfg=White ctermbg=166 cterm=Bold
+	hi CursorLine     ctermfg=White ctermbg=235 cterm=None
 
-	hi CtrlPMode1     ctermfg=White ctermbg=235
-	hi CtrlPMode2     ctermfg=White ctermbg=235
+	hi CtrlPMode1     ctermfg=White ctermbg=231
+	hi CtrlPMode2     ctermfg=White ctermbg=166
 	hi CtrlPStats     ctermfg=White ctermbg=235
 	hi CtrlPNoEntries ctermfg=DarkRed
-	hi CtrlPMatch     ctermfg=White ctermbg=166 cterm=Bold
+	hi CtrlPMatch     ctermfg=Black ctermbg=243
 	hi CtrlPLinePre   ctermfg=DarkGray
 	hi CtrlPPrtBase   ctermfg=DarkGray
 	hi CtrlPPrtText   ctermfg=DarkYellow
