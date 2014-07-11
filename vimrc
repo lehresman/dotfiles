@@ -1,5 +1,11 @@
 let loaded_matchparen = 1
 
+let g:ack_autoclose = 1
+let g:ackhighlight = 1
+let g:ackpreview = 0
+let g:ack_use_dispatch = 1
+let g:ack_default_options = " -s -H --nocolor --nogroup --column --smart-case --follow --type-set=LOG=.log --noLOG "
+
 set clipboard=unnamed
 set nocompatible
 set ignorecase
@@ -72,6 +78,12 @@ Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
 " --> For jst/ejs support
 Plugin 'briancollins/vim-jst'
+" --> For changing the cwd to the project root
+Plugin 'airblade/vim-rooter'
+" --> For fuzzy finding
+Plugin 'mileszs/ack.vim'
+" --> For asynchronously running commands
+Plugin 'tpope/vim-dispatch'
 call vundle#end()
 filetype plugin indent on
 
@@ -92,3 +104,5 @@ endf
 fu! CtrlP_Statusline_2(...)
 	return '%#CtrlPMode2# '.a:1.' %*'
 endf
+
+noremap <C-f> :tabnew<CR>:Ack 
