@@ -35,6 +35,14 @@ function munge_path {
 }
 
 
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+	# include .bashrc if it exists
+	if [ -f "$HOME/.bashrc" ]; then
+		. "$HOME/.bashrc"
+	fi
+fi
+
 # colors found at http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 RS="\[\033[0m\]"    # reset
 BOLD="\[\033[38;5;220m\]"
