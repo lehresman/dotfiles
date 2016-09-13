@@ -59,6 +59,7 @@ alias ls="ls -GF"
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export REVEAL_HOME=$HOME/Code/cuegg/reveal
+export GOPATH=~/Projects
 
 [[ -s "$HOME/.bash_custom" ]] && source "$HOME/.bash_custom"
 

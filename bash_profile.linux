@@ -46,6 +46,7 @@ export FIGNORE=".svn"
 
 unset LANG
 export LC_ALL=POSIX
+export LESS=-S
 
 alias ls="ls --color -F"
 
